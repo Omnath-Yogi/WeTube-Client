@@ -4,22 +4,9 @@ import { useAppContext } from '../../AppContex'
  
 const SidebarItem = ({ icon, label, isOpen }) => {
   const {navigate}= useAppContext();
- const handleNavigate=async()=>{
-     if(label==="Like"){
-      navigate('/like')
-     }
-     else if(label==="Home"){
-      navigate('/')
-     }
-     else  if(label==="You"){
-      navigate('/user')
-     }
-     else  if(label==="History"){
-      navigate('/history')
-     }
-  }
+ 
   return (
-    <div onClick={handleNavigate}
+    <div 
       className={`
         flex items-center gap-3
         py-2 px-3 rounded-xl cursor-pointer

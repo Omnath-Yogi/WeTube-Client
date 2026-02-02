@@ -19,6 +19,7 @@ const Login = () => {
         axios.defaults.headers.common['Authorization'] = data.token;
 
          const decoded = jwtDecode(data.token);
+         
 
          if(decoded.role==="user"){
           navigate('/')

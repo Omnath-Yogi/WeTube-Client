@@ -13,6 +13,10 @@ import Comments from './pages/admin/Comments'
 import VideoList from './pages/admin/VideoList'
 import AddVideo from './pages/admin/AddVideo.jsx'
 import ProtectedAdminRoute from './components/Admin/ProtectedAdminRoute.jsx'
+import Like from './pages/Like.jsx'
+import WatchHistory from './pages/WatchHistory.jsx'
+import Profile from './pages/Profile.jsx'
+import LayoutHome from './components/User/LayoutHome.jsx'
 
 const App = () => {
   const{token} =useAppContext()
@@ -26,7 +30,7 @@ const App = () => {
         <Route path='/' element={<Home/>}/>
         <Route path='/watch/:_id' element={ <Watch/>}/>
         <Route path='/login' element={<Login/>}/>
-         <Route path='/register' element={<Register/>}/>
+        <Route path='/register' element={<Register/>}/>
 
 
 
@@ -39,6 +43,30 @@ const App = () => {
         </Route>
         </Route>
 
+
+
+
+        <Route path='/user' element={token?<LayoutHome/>:<Login/>}>
+        <Route index element={<Profile/>}/>
+        <Route path='like' element={<Like/>} />
+        <Route path='history' element={<WatchHistory/>}/>
+
+
+
+        </Route>
+
+
+
+     
+     
+   
+
+
+
+
+
+
+ 
 
        </Routes>
     </div>
