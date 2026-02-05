@@ -58,7 +58,7 @@ const Register = () => {
         <div className="flex flex-col items-center mb-10">
           <img
           onClick={()=>{navigate('/')}}
-            src="./WeTube.png"
+            src="/WeTube.png"
             alt="WeTube"
             className="
              cursor-pointer
