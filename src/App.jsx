@@ -24,7 +24,7 @@ const App = () => {
     <div> 
       <Toaster/>
       <Routes>
-
+  
 
           
         <Route path='/' element={<Home/>}/>
@@ -44,29 +44,13 @@ const App = () => {
         </Route>
 
 
-
-
+        
         <Route path='/user' element={token?<LayoutHome/>:<Login/>}>
         <Route index element={<Profile/>}/>
         <Route path='like' element={<Like/>} />
         <Route path='history' element={<WatchHistory/>}/>
-
-
-
         </Route>
 
-
-
-     
-     
-   
-
-
-
-
-
-
- 
 
        </Routes>
     </div>
