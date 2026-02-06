@@ -1,14 +1,37 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import moment from 'moment';
+import { useAppContext } from '../../AppContex';
+ 
+ 
 
  const VideoCard = ({video}) => {
 
-   const navigate = useNavigate();
+  const{navigate,token ,axios} = useAppContext()
+  
   const {title ,thumbnail ,views ,createdAt ,_id} = video
 
+
+
+
+
+const redirect = ()=>{
+navigate(`/watch/${_id}`)
+}
+
+
+const handleClick = () => {
+   redirect();
+ 
+ 
+};
+
+
+
+
+
   return (
-    <div  onClick={()=>navigate(`/watch/${_id}`)} 
+    <div   onClick={handleClick}  
       className=" cursor-pointer rounded-xl  p-2 -m-2 transition hover:bg-white/5 group" >
       {/* Thumbnail */}
       <div className="relative w-full aspect-video overflow-hidden rounded-xl bg-slate-800">
